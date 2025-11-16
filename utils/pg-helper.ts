@@ -1,10 +1,10 @@
 import { dev } from './dev-log';
 import { NextResponse } from 'next/server';
 
-export const handleQuery = async <T>(
-  func: () => Promise<T>,
+export const handleQuery = async (
+  func: () => Promise<NextResponse>,
   errMessage: string
-): Promise<Response | T> => {
+): Promise<NextResponse> => {
   try {
     return await func();
   } catch (err: unknown) {
@@ -14,7 +14,7 @@ export const handleQuery = async <T>(
 
     dev.log(message);
 
-    return NextResponse.json({ message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 };
 
