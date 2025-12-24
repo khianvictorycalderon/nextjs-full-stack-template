@@ -29,4 +29,4 @@ This section is provided for reference only, to give you insight into how the pr
 - `npm install react-hook-form`
 - `npm install dotenv`
 - `npm install zod`
-- `npm install bcrypt`
+- `npm install bcryptjs`
